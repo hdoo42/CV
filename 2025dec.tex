@@ -1,0 +1,161 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{geometry}
+% 여백을 좁게 조정하여 한 페이지 확보
+\geometry{left=1.2cm, right=1.2cm, top=1.2cm, bottom=1.2cm}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\setlist{nolistsep} % 리스트 간격 제거
+\usepackage{hyperref}
+\usepackage{kotex}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{fontawesome}
+
+% 색상 정의
+\definecolor{bonusSteelBlue}{RGB}{70, 130, 180}
+\definecolor{darkGray}{RGB}{60, 60, 60}
+\definecolor{lightGray}{RGB}{150, 150, 150}
+
+% 하이퍼링크 설정
+\hypersetup{
+    colorlinks=true,
+    linkcolor=bonusSteelBlue,
+    urlcolor=bonusSteelBlue,
+}
+
+% 섹션 스타일 (작은 글씨, 굵게)
+\titleformat{\section}
+{\large\bfseries\color{darkGray}}
+{}
+{0em}
+{}[\titlerule]
+
+% 커스텀 명령어
+\newcommand{\jobtitle}[2]{{\large\textbf{#1}} \hfill \textit{#2}}
+\newcommand{\dates}[1]{\hfill {\small\color{lightGray} #1}}
+
+\begin{document}
+\pagestyle{empty} % 페이지 번호 제거
+
+% --- HEADER (전체 폭) ---
+\begin{center}
+    {\Huge\bfseries 두혁진} \\ \vspace{0.2em}
+    {\Large\textcolor{bonusSteelBlue}{Software Engineer}} \\ \vspace{0.3em}
+    {\small \faPhone \ 010-2805-0547 \quad | \quad \faEnvelope \ tyeirdoo06@gmail.com}
+\end{center}
+
+\vspace{0.5em}
+
+% --- 2단 레이아웃 시작 ---
+\noindent
+\begin{minipage}[t]{0.34\textwidth} % 왼쪽 컬럼 (34%)
+    
+    % 1. PROFILE (요약) - 왼쪽으로 이동하여 공간 활용
+    \section*{Profile}
+    \small
+    시스템의 기저 원리 탐구와 운영 자동화를 즐기는 엔지니어입니다. C/C++ 기반의 시스템 프로그래밍 역량과 Rust 백엔드 개발 경험으로 모빌리티 소프트웨어의 안정성에 기여하고 싶습니다.
+
+    \vspace{1.5em}
+
+    % 2. EDUCATION
+    \section*{Education}
+    \textbf{42 Seoul} \\ 
+    (이노베이션 아카데미) \\
+    \textit{2021.11 - 2023.12}
+    
+    \vspace{0.5em}
+    \textbf{Core Competencies:}
+    \begin{itemize}[leftmargin=1em, label=\textbullet]
+        \item C/C++로 쉘(Shell), irc server 구현
+        \item 엄격한 기준(0 memeory leak, fault, crash)의 동료 평가 경험
+    \end{itemize}
+
+    \vspace{1.5em}
+
+    % 3. TECHNICAL SKILLS
+    \section*{Skills}
+    \textbf{Languages} \\
+    C, C++, Rust, Bash, Python
+    
+    \vspace{0.5em}
+    \textbf{System \& OS} \\
+    Linux (Kernel Tuning), Shell Scripting
+    
+    \vspace{0.5em}
+    \textbf{DevOps \& Tools} \\
+    Neovim, Git, Ansible, Docker, Prometheus, Grafana
+
+    \vspace{1.5em}
+
+    % 4. ASK ME ABOUT (오른쪽 공간 부족 시 여기에 배치)
+    \section*{Ask Me About}
+    \textbf{Linux Kernel Troubleshooting}
+    \begin{itemize}[leftmargin=1em, label=\textbullet]
+        \item \textbf{Issue:} Ubuntu 22.04 커널 업데이트 후 밝기 조절 불가 현상
+        \item \textbf{Fix:} 부팅 프로세스 분석 후 \texttt{GRUB} 커널 파라미터 수정으로 해결
+        \item \textbf{Note:} Dell 기술지원이 해결 못한 하드웨어 호환성 문제 해결
+    \end{itemize}
+
+\end{minipage}
+\hfill % 좌우 컬럼 사이 간격
+\begin{minipage}[t]{0.62\textwidth} % 오른쪽 컬럼 (62%)
+
+    % 5. WORK EXPERIENCE
+    \section*{Work Experience}
+    
+    \jobtitle{(재)경산이노베이션아카데미}{Software Engineer} \\
+    \dates{2024.02 - 현재}
+    \begin{itemize}[leftmargin=1em, label=\textbullet, itemsep=0.2em]
+        \item \textbf{Operational Automation (GsRoot \& GsApi)}
+        \begin{itemize}
+            \item Rust/SQLite 기반 슬랙봇 및 API 서버 개발로 워크스테이션 제어(세션 종료, 리셋) 자동화.
+            \item 관리자 수동 개입 최소화 및 24시간 무중단 운영 기여.
+        \end{itemize}
+        \item \textbf{System Integration (BLINK)}
+        \begin{itemize}
+            \item 물리 보안 시스템(Biostar2)과 LDAP 인증 서버 간 미들웨어 개발.
+            \item 로그인-출입 권한 자동 동기화로 이기종 시스템 데이터 일관성 확보.
+        \end{itemize}
+        \item \textbf{Infrastructure Monitoring}
+        \begin{itemize}
+            \item Prometheus, Grafana, Loki 도입으로 서버 및 클러스터 관제 시스템 구축.
+            \item 리소스 시각화로 장애 감지 시간 단축.
+        \end{itemize}
+        \item \textbf{Wiki Construction (Codevalley)}
+        \begin{itemize}
+            \item 사내 기술 지식 공유를 위한 위키 구축 및 문서화 주도.
+        \end{itemize}
+    \end{itemize}
+
+    \vspace{1em}
+
+    \jobtitle{42 서울 운영팀 (인턴)}{Cluster Manager} \\
+    \dates{2023.10 - 2023.12}
+    \begin{itemize}[leftmargin=1em, label=\textbullet, itemsep=0.2em]
+        \item Ansible을 활용한 대규모 클러스터 프로비저닝 및 구성 관리 자동화.
+        \item 교육생 과제 명세(Subject) 기술 검토 및 수정.
+    \end{itemize}
+
+    \vspace{1.5em}
+
+    % 6. PROJECTS (Ask Me About을 보조하거나 추가 프로젝트)
+    \section*{Key Projects}
+    \textbf{Humans of 42 (Web Refactoring)}
+    \begin{itemize}[leftmargin=1em, label=\textbullet]
+        \item \textbf{Problem:} 기존 사이트 인증서 만료 및 유지보수 중단.
+        \item \textbf{Solution:} Next.js로 마이그레이션 및 GitHub Actions CI/CD 구축.
+        \item \textbf{Result:} 서버 비용 100\% 절감 및 인증서 자동 갱신 체계 마련.
+    \end{itemize}
+
+    \vspace{0.8em}
+    \textbf{42 Region (Private Cloud Build)}
+    \begin{itemize}[leftmargin=1em, label=\textbullet]
+        \item OpenStack 기반 프라이빗 클라우드 구축 시도 중 네트워크 이슈(L1/L2 VLAN) 트러블슈팅 경험.
+        \item 인프라 네트워킹 및 가상화 기술에 대한 심도 있는 학습 계기 마련.
+    \end{itemize}
+
+\end{minipage}
+
+\end{document}
