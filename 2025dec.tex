@@ -1,22 +1,35 @@
 \documentclass[10pt, a4paper]{article}
 
-\usepackage{setspace} % 줄간격 패키지
-\setstretch{1.3}      % 1.6배 (160%) 설정
+\usepackage{setspace}
+\setstretch{1.2}      % 줄간격 약간 축소
 \usepackage{fontspec}
 \usepackage{geometry}
-% 여백: 상하좌우 1.2cm
+% 여백 유지
 \geometry{left=1.6cm, right=1.6cm, top=1.6cm, bottom=1.6cm}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\setlist{nolistsep} % 리스트 간격 제거
 \usepackage{hyperref}
 \usepackage{kotex}
 \usepackage{array}
 \usepackage{xcolor}
 \usepackage{fontawesome}
 
-\setmainfont{Roboto}
+% 폰트 설정 (시스템에 Roboto 폰트가 설치되어 있어야 합니다)
+\setmainfont{Roboto}[
+    UprightFont = *-Regular,
+    BoldFont = *-Bold,
+    ItalicFont = *-Italic
+]
 \setsansfont{Roboto}
+
+% [핵심] 얇고 작은 폰트를 위한 별도 정의 (Roboto Light 사용)
+\newfontfamily\lightfont{Roboto Light}
+
+% [핵심] 설명글용 스타일 매크로 정의 (8pt 크기, 얇은 폰트, 줄간격 10pt)
+\newcommand{\descstyle}{\lightfont\fontsize{8pt}{10pt}\selectfont}
+
+% 리스트 설정 (전역)
+\setlist{nolistsep, leftmargin=1em} 
 
 % 색상 정의
 \definecolor{bonusSteelBlue}{RGB}{70, 130, 180}
@@ -38,39 +51,37 @@
 {}[\titlerule]
 
 % 커스텀 명령어
-\newcommand{\jobtitle}[2]{\textbf{#1} \hfill \textit{#2}}
-\newcommand{\dates}[1]{\hfill {\small\color{lightGray} #1}}
+\newcommand{\jobtitle}[2]{{\normalsize\textbf{#1}} \hfill {\descstyle\textit{#2}}}
+\newcommand{\dates}[1]{\hfill {\descstyle\color{lightGray} #1}}
 
 \begin{document}
 \pagestyle{empty}
 
-% huge --- HEADER START ---
+% --- HEADER START ---
 \noindent
-\begin{minipage}[t]{0.70\textwidth} % 왼쪽: 이름, 직무, 프로필
-    {\huge\bfseries 두혁진}  \\[0.6em]
+\begin{minipage}[t]{0.61 \textwidth} 
+    {\huge\bfseries 두혁진} \\[0.5em]
     {\Large\textcolor{bonusSteelBlue}{System Software Engineer}} 
     \vspace{0.8em}
     
-    {\small 
-    시스템의 기저 원리 탐구와 운영 자동화를 즐기는 엔지니어입니다. \\
-    C/C++ 기반의 시스템 프로그래밍 역량과 Rust 백엔드 개발 경험으로 \\
-    모빌리티 소프트웨어의 안정성에 기여하고 싶습니다.}
+    {\descstyle 
+    시스템의 기저 원리를 파고들며 운영 업무를 자동화하여 안정적인 서비스를 만드는 엔지니어입니다.
+    C/C++ 기반의 견고한 시스템 프로그래밍 역량과 Rust의 메모리 안정성을 활용하여 
+    모빌리티 소프트웨어의 신뢰성 확보에 기여하고 싶습니다.}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.28\textwidth} % 오른쪽: 연락처
+\begin{minipage}[t]{0.28\textwidth} 
     {\huge\bfseries contact} \\
-    {\small
+    {\descstyle
     \faPhone \ 010-2805-0547 \\
     \faEnvelope \ \href{mailto:tyeirdoo06@gmail.com}{tyeirdoo06@gmail.com} \\
     \faGithub \ \href{https://github.com/hdoo42}{github.com/hdoo42}
     }
 \end{minipage}
 
-\vspace{1.0em}
-% --- HEADER END ---
+\vspace{1.5em}
 
-
-% --- 2단 레이아웃 본문 시작 ---
+% --- 본문 시작 ---
 \noindent
 \begin{minipage}[t]{0.34\textwidth} % 왼쪽 컬럼
 
@@ -78,45 +89,53 @@
     \section*{\huge{education}}
     42 Seoul \\ 
     \dates{2021.11 - 2023.12}
+    \vspace{0.3em}
     
-    \vspace{0.5em}
-   
-    % 한 문장 요약 (옵션 1 적용 예시)
-    \small{C/C++ 기반의 견고한 시스템 프로그래밍(쉘·네트워크·동시성)부터 가상화 인프라 운영까지 컴퓨터 과학의 핵심 기초를 체화}\\
-    \small{6대 coalition master(학생회장) 역임, 커뮤니티에 대한 기여를 인정받아 IITP원장상 수상}
+    % [수정] '메모리 수동 관리', '엄격한 표준' 강조 -> MISRA C 대응 역량 어필
+    {\descstyle
+    \begin{itemize}[label=\textbullet]
+        \item C std lib, bash, IRC server 등을 직접 재구현하며 CS 기초 체화
+        \item 엄격한 코드 규칙(Norminette) 준수 및 메모리 수동 관리를 통해 결함 없는 코드 작성 훈련
+        \item 6대 coalition master(학생회장) 역임, 커뮤니티에의 공로 인정받아 IITP원장상 수상
+    \end{itemize}
+    }
 
-    \vspace{1.0em}
+
+    \vspace{1.2em}
 
     % 2. SKILLS
-    \section*{\huge{ skills }}
+    \section*{\huge{skills}}
     Programming \\
-    \small{ Rust, C, C++, Bash, Python }
+    {\descstyle Rust, C, C++, Bash, Python }
     
     \vspace{0.5em}
+    
     Spoken Languages \\
-    \small{ Japanese (Advanced Business) \\
-    English (Daily / Simple Business) }    
+    {\descstyle Japanese (Advanced Business) \\
+    English (Daily / Simple Business) }     
 
     \vspace{0.5em}
     System \& OS \\
-    \small{ Linux (Ubuntu), Shell Scripting }
+    {\descstyle Linux (Ubuntu), Shell Scripting }
     
     \vspace{0.5em}
     DevOps \& Tools \\
-    \small{ Neovim, Git, Ansible, Docker, Prometheus, Grafana }
+    {\descstyle Neovim, Git, Ansible, Docker, Prometheus, Grafana }
 
-    \vspace{1.0em}
+    \vspace{1.2em}
 
     % 3. ASK ME ABOUT
     \section*{\huge{ask me about}}
     Linux Kernel Troubleshooting
-    \begin{itemize}[leftmargin=1em, label=\textbullet]
-        \item Issue: Ubuntu 22.04 커널 업데이트 후 밝기 조절 불가 현상, Dell 기술지원이 해결 못한 문제
-        \item Fix: \texttt{GRUB} 커널 파라미터 수정으로 해결
+    \begin{itemize}[label=\textbullet]
+        \descstyle 
+        % [수정] 하드웨어-OS 인터페이스 문제 해결 능력 강조
+        \item Issue: Ubuntu 22.04 커널 업데이트 후 하드웨어(밝기 조절) 제어 불가 현상 트러블슈팅
+        \item Fix: GRUB 커널 파라미터 및 비디오 드라이버 로드 옵션 수정을 통해 호환성 문제 해결
     \end{itemize}
 
 \end{minipage}
-\hfill % 좌우 컬럼 사이
+\hfill
 \begin{minipage}[t]{0.62\textwidth} % 오른쪽 컬럼
 
     % 4. WORK EXPERIENCE
@@ -124,25 +143,31 @@
     
     \jobtitle{(재)경산이노베이션아카데미}{System Software Engineer} \\
     \dates{2024.02 - 현재}
-    \begin{itemize}[leftmargin=1em, label=\textbullet] 
+    \begin{itemize}[label=\textbullet] 
+        \descstyle 
+        % [수정] '슬랙봇' -> '자동화 시스템', '제어' 강조
         \item Operational Automation (GsRoot)
         \begin{itemize}
-            \item Rust/SQLite 기반 슬랙봇 및 API 서버 개발로 워크스테이션 제어(세션 종료, 리셋) 자동화
-            \item 관리자 수동 개입 최소화 및 24시간 무중단 운영 기여
+            \item Rust/SQLite 기반 워크스테이션 제어(세션 종료, 리셋) 자동화 시스템 및 API 서버 개발
+            \item 관리자 수동 개입 최소화 및 24시간 무중단 운영 환경(Availability) 확보
         \end{itemize}
+        
+        % [수정] '미들웨어', '정합성' 강조 -> 차량 내 시스템 통합 역량 어필
         \item System Integration (BLINK)
         \begin{itemize}
-            \item 물리 보안 시스템(Biostar2)과 LDAP 인증 서버 간 미들웨어 개발
-            \item 로그인-출입 권한 자동 동기화로 이기종 시스템 데이터 일관성 확보
+            \item 물리 보안 시스템(Biostar2)과 LDAP 인증 서버 간 데이터 동기화 미들웨어 개발
         \end{itemize}
+        
         \item Infrastructure Monitoring
         \begin{itemize}
             \item Prometheus, Grafana, Loki 도입으로 서버 및 클러스터 관제 시스템 구축
-            \item 리소스 시각화로 장애 감지 시간 단축
+            \item 리소스 시각화로 장애 감지 시간 단축 및 선제적 대응 체계 마련
         \end{itemize}
-        \item Wiki Construction (codevalley.kr)
+        
+        % [수정] 위키 구축 -> 기술 자산화
+        \item Technical Documentation (codevalley.kr)
         \begin{itemize}
-            \item 사내 기술 지식 공유를 위한 위키 구축 및 문서화 주도
+            \item 사내 기술 지식 공유 및 자산화를 위한 위키(Wiki) 시스템 구축 및 문서화 주도
         \end{itemize}
     \end{itemize}
 
@@ -150,20 +175,22 @@
 
     \jobtitle{(재)이노베이션 아카데미}{Intern} \\
     \dates{2023.10 - 2023.12}
-    \begin{itemize}[leftmargin=1em, label=\textbullet]
-        \item Ansible을 활용한 대규모 클러스터 프로비저닝 및 구성 관리 자동화
-        \item 교육생 과제 명세 작성
+    \begin{itemize}[label=\textbullet]
+        \descstyle 
+        \item Ansible을 활용한 대규모 클러스터 프로비저닝 및 구성 관리(Configuration Management) 자동화
+        \item 교육생 과제 명세 작성 및 시스템 가이드라인 배포
     \end{itemize}
 
     \vspace{1.0em}
 
     % 5. KEY PROJECTS
     \section*{\huge{key projects}}
-    \vspace{0.5em}
+    \vspace{0.2em}
     \textbf{42 Region (Private Cloud Build)}
-    \begin{itemize}[leftmargin=1em, label=\textbullet]
-        \item OpenStack 기반 프라이빗 클라우드 구축 시도 중 네트워크 이슈(L1/L2 VLAN) 트러블슈팅 경험
-        \item 인프라 네트워킹 및 가상화 기술에 대한 심도 있는 학습 계기 마련
+    \begin{itemize}[label=\textbullet]
+        \descstyle 
+        \item OpenStack 기반 프라이빗 클라우드 구축 중 네트워크 이슈(L1/L2 VLAN) 트러블슈팅
+        \item 가상화 인프라 및 네트워크 아키텍처에 대한 심도 있는 이해
     \end{itemize}
 
 \end{minipage}
