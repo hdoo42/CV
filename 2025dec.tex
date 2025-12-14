@@ -39,27 +39,35 @@
 \begin{document}
 \pagestyle{empty} % 페이지 번호 제거
 
-% --- HEADER (전체 폭) ---
-\begin{center}
-    {\Huge\bfseries 두혁진} \\ \vspace{0.2em}
-    {\Large\textcolor{bonusSteelBlue}{Software Engineer}} \\ \vspace{0.3em}
-    {\small \faPhone \ 010-2805-0547 \quad | \quad \faEnvelope \ tyeirdoo06@gmail.com}
-\end{center}
+% --- HEADER START ---
+\noindent
+\begin{minipage}[t]{0.70\textwidth} % 왼쪽: 이름, 직무, 프로필 (70%)
+    {\huge\bfseries 두혁진} 
+    {\Large\bfseries\textcolor{bonusSteelBlue}{Software Engineer}} 
+    
+    % Profile 텍스트를 이름 바로 아래 배치
+    {\small 
+    시스템의 기저 원리 탐구와 운영 자동화를 즐기는 엔지니어입니다. \\
+    C/C++ 기반의 시스템 프로그래밍 역량과 Rust 백엔드 개발 경험으로 \\
+    모빌리티 소프트웨어의 안정성에 기여하고 싶습니다.}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.28\textwidth} % 오른쪽: 연락처 (28%)
+    {\huge\bfseries contact} \\
+    {\small
+    \faPhone \ 010-2805-0547 \\
+    \faEnvelope \ tyeirdoo06@gmail.com}
+\end{minipage}
 
-\vspace{0.5em}
+\vspace{1.5em}
+% --- HEADER END ---
 
-% --- 2단 레이아웃 시작 ---
+
+% --- 2단 레이아웃 본문 시작 ---
 \noindent
 \begin{minipage}[t]{0.34\textwidth} % 왼쪽 컬럼 (34%)
-    
-    % 1. PROFILE (요약) - 왼쪽으로 이동하여 공간 활용
-    \section*{Profile}
-    \small
-    시스템의 기저 원리 탐구와 운영 자동화를 즐기는 엔지니어입니다. C/C++ 기반의 시스템 프로그래밍 역량과 Rust 백엔드 개발 경험으로 모빌리티 소프트웨어의 안정성에 기여하고 싶습니다.
 
-    \vspace{1.5em}
-
-    % 2. EDUCATION
+    % 1. EDUCATION (업데이트됨)
     \section*{Education}
     \textbf{42 Seoul} \\ 
     (이노베이션 아카데미) \\
@@ -68,13 +76,14 @@
     \vspace{0.5em}
     \textbf{Core Competencies:}
     \begin{itemize}[leftmargin=1em, label=\textbullet]
-        \item C/C++로 쉘(Shell), irc server 구현
-        \item 엄격한 기준(0 memeory leak, fault, crash)의 동료 평가 경험
+        \item 
+        \item C/C++로 쉘(Shell), IRC Server 밑바닥부터 구현
+        \item 엄격한 기준(0 memory leak, fault, crash)의 동료 평가 통과 및 경험
     \end{itemize}
 
     \vspace{1.5em}
 
-    % 3. TECHNICAL SKILLS
+    % 2. TECHNICAL SKILLS
     \section*{Skills}
     \textbf{Languages} \\
     C, C++, Rust, Bash, Python
@@ -89,7 +98,7 @@
 
     \vspace{1.5em}
 
-    % 4. ASK ME ABOUT (오른쪽 공간 부족 시 여기에 배치)
+    % 3. ASK ME ABOUT
     \section*{Ask Me About}
     \textbf{Linux Kernel Troubleshooting}
     \begin{itemize}[leftmargin=1em, label=\textbullet]
@@ -102,7 +111,7 @@
 \hfill % 좌우 컬럼 사이 간격
 \begin{minipage}[t]{0.62\textwidth} % 오른쪽 컬럼 (62%)
 
-    % 5. WORK EXPERIENCE
+    % 4. WORK EXPERIENCE
     \section*{Work Experience}
     
     \jobtitle{(재)경산이노베이션아카데미}{Software Engineer} \\
@@ -140,7 +149,7 @@
 
     \vspace{1.5em}
 
-    % 6. PROJECTS (Ask Me About을 보조하거나 추가 프로젝트)
+    % 5. KEY PROJECTS
     \section*{Key Projects}
     \textbf{Humans of 42 (Web Refactoring)}
     \begin{itemize}[leftmargin=1em, label=\textbullet]
