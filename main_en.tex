@@ -1,0 +1,179 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{enumitem}
+\setlist{nolistsep}
+\usepackage{hyperref}
+\usepackage{kotex}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fontawesome}
+\definecolor{pastelgreen}{RGB}{120, 220, 120}
+\definecolor{darkergreen}{RGB}{0, 128, 0}
+\definecolor{darkeryellow}{RGB}{254, 176, 36}
+\newcommand{\textbr}[1]{\textbf{\textcolor{bonusSteelBlue}{#1}}}
+\newcommand{\textcb}[1]{\textcolor{bonusSteelBlue}{(#1)}}
+\definecolor{bonusTeal}{RGB}{0, 128, 128}
+\definecolor{bonusCoral}{RGB}{255, 127, 80}
+\definecolor{bonusPlum}{RGB}{142, 69, 133}
+\definecolor{bonusOlive}{RGB}{107, 142, 35}
+\definecolor{bonusSteelBlue}{RGB}{70, 130, 180}
+\definecolor{mediumGray}{RGB}{246,246,246}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+
+\titleformat{\section}
+{\large\bfseries}
+{}
+{0em}
+{}[\titlerule]
+
+\titleformat{\subsection}[runin]
+{\bfseries}
+{}
+{0em}
+{}
+
+\renewcommand{\maketitle}{
+\begin{center}
+{\huge\bfseries
+\theauthor}
+
+\vspace{.25em}
+010-2805-0547 | tyeirdoo06@gmail.com
+\end{center}
+}
+
+\begin{document}
+\pagecolor{mediumGray}
+\onehalfspacing
+
+\title{CV}
+\author{Doo Hyeokjin}
+
+\maketitle
+
+\section{Education about Development}
+\textbf{42 Seoul}(2021. 9. - Present)\\
+Passed all assignments with a perfect score
+
+% 학습 내용: C ~\cdot~ C++ ~\cdot~ Linux ~\cdot~ Shell ~\cdot~ Web
+
+\section{Skills \textcolor{bonusSteelBlue}{(Areas of interest)}}
+\begin{tabular}{r| p{0.7\textwidth} c}
+    \textbf{Programming Language~\cdot~}& \textbf{C / C++}~\cdot~Bash~\cdot~TypeScript~\cdot~HTML5~\cdot~CSS3\\
+    \textbf{Methology}& \textcb{\textbf{Rust}, TDD, Fucntional Programming}\\
+    \textbf{Framework~\cdot~Library}& Next.js~\cdot~React~\cdot~TailwindCSS \newline \textcb{Vulkan, Three.js}\\
+    \textbf{Server~\cdot~DB}& Mariadb, Nginx, Lighttpd \newline \textcb{GraphQL}\\
+    \textbf{Tooling~\cdot~DevOps}& \textbf{Make}, Docker compose, Github, ansible, Prometheus, Grafana \newline \textcb{Open Stack}\\
+    \textbf{Environment}& Linux(debian, alpine), MacOS, GCP \newline \textcb{AWS}\\
+    \textbf{Editor}& Vim~\cdot~Neovim \newline \textcb{Zed}
+\end{tabular}
+
+\section{Projects \textcolor{bonusSteelBlue}{(Additional Implementation)}}
+\textbf{minitalk (C)}
+
+Implement data communication using signals (USR1, USR2), Unicode compatible
+
+\textcb{Error correction using Hamming code}\\
+\textbf{minishell (C)}
+
+Partially implement Bash features
+
+\textcb{Implementation of LALR parser}\\
+\textbf{inception (docker)}
+
+Configure LEMP environment using Docker compose (write all images yourself)
+
+\textcb{Set up monitoring environment of Mariadb and Redis using Prometheus and Grafana}\\
+\textbf{\textit{\href{https://42-serv.github.io/ft_irc/}{ft\_irc}} (C++98) }
+
+Implement a multi-client supported IRC server, multiplexing, and non-blocking I/O
+
+\textcb{Implement Multi-threading, Smart pointers}\\
+
+\section{Improvements / Problem-Solving Cases}
+\textbf{Humans of 42}(October 24, 2023 - November 24, 2023)
+
+Overview: Reconstructed a site providing photos and writings of interviews into a static page using Next.js and github.io.
+
+Introduction: \textbf{\textit{\href{https://42humans.com}{Humans of 42}} captures the everyday stories of people at 42 Seoul.}\\\\
+
+\begin{tabular}{l l}
+    1. Problem:&Continuous expiration of site certificate\\
+    2. Cause:&Lack of maintenance personnel\\
+    3. Solution:&Revamped old tech stack to next.js, changed to static page \rightarrow deployed using github.io\\
+    4. Evaluation:&Automatic certificate renewal on Github page\\
+    5. Remarks:&Server costs reduced from 50,000 KRW per month to zero by switching to static page.\\
+            &Direct provision of original images, leading to improved image quality.
+\end{tabular}
+
+\section{Challenges / Failure Cases}
+\textbf{42 Region}(September 2022 - December 2022)
+
+Overview: Building a private cloud service for use within 42 Seoul (using OpenStack)\\
+
+\begin{tabular}{l l}
+    1. Problem:&Unable to connect to the external internet after instance creation\\
+    2. Cause:&Lack of tagged VLAN settings in the switch at 42 Seoul's facility network\\
+    4. Evaluation:&Lack of knowledge at L1-L2 level\\
+    3. Response:&Formed a study group with team members to supplement network design \\
+                &and knowledge from the physical layer Created a basic knowledge map \\
+                &required for design\\
+\end{tabular}
+
+
+\section{Education}
+\textbf{Geumgang University, Japanese Interp and Trans} | Bachelor's degree\\
+Entered in March 2014\\
+\hspace*{0.5cm}└─\textbf{Hitotsubashi University, Economics (MEXT Scholarship)}\\
+\hspace*{1cm}September 2015 - August 2016 (2 semesters)\\
+\hspace*{0.5cm}└─\textbf{Reitaku University, Economics}\\
+\hspace*{1cm}April 2017 - August 2017 (1 semester)\\
+Graduated in February 2019\\
+
+\section{Military Service}
+\textbf{Korean Army} | Honorable Discharge as Sergeant\\
+Role: Operations Soldier (Administrative)
+Service Period: July 2019 - February 2021
+
+\section{Career}
+\textbf{Watcha (Contract)}
+
+Duties: Content data supplementation and management, translation (non-development)
+
+Employment Period: April 2019 - July 2019, March 2021 - July 2021\\
+\textbf{42 Seoul Pedago Team (Intern)}
+
+Duties: Writing internal assignment specifications for 42 Seoul, managing computer clusters using Ansible
+
+Employment Period: October 2023 - December 2023
+
+\section{Awards}
+\textbf{Director's Award from the IITP}\\
+\hspace*{0.5cm}Event Name: 2023 INNO-CON (Innovation Academy Outcome Sharing Conference)\\
+\hspace*{0.5cm}Reason for Award:\\
+\hspace*{1cm}Role: 42 Seoul Coalition Master (Student Representative)\\
+\hspace*{1cm}Contribution Area:
+\begin{itemize}
+    \begin{itemize}
+        \item Hosting community events
+        \item Improving facility environment
+    \end{itemize}
+\end{itemize}
+\hspace*{0.5cm}Outcome: Enhanced community engagement and communication between students and staff
+
+\end{document}
