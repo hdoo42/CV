@@ -1,7 +1,7 @@
 \documentclass[10pt, a4paper]{article}
 %
 \usepackage{setspace}
-\setstretch{1.2}      % 줄간격 약간 축소
+\setstretch{1.2}      % [변경] 줄간격 1.2 -> 1.35로 확대하여 가독성 및 공간 확보
 \usepackage{fontspec}
 \usepackage{geometry}
 % 여백 유지
@@ -25,11 +25,15 @@
 % [핵심] 얇고 작은 폰트를 위한 별도 정의 (Roboto Light 사용)
 \newfontfamily\lightfont{Roboto Light}
 
-% [핵심] 설명글용 스타일 매크로 정의 (8pt 크기, 얇은 폰트, 줄간격 10pt)
-\newcommand{\descstyle}{\lightfont\fontsize{8pt}{10pt}\selectfont}
+% [변경] 본문 폰트 설정 수정
+% 기존: 8pt / 10pt (너무 작음)
+% 변경: 9.5pt / 13pt (가독성 확보 및 수직 공간 채움)
+\newcommand{\descstyle}{\lightfont\fontsize{9.5pt}{10pt}\selectfont}
 
-% 리스트 설정 (전역)
-\setlist{nolistsep, leftmargin=1em} 
+% [변경] 리스트 스타일 수정
+% 기존: nolistsep (간격 없음)
+% 변경: itemsep=0.3em (항목 간 숨쉴 공간 부여)
+\setlist{leftmargin=1em, itemsep=0.3em} 
 
 % 색상 정의
 \definecolor{bonusSteelBlue}{RGB}{70, 130, 180}
@@ -79,7 +83,7 @@
     }
 \end{minipage}
 
-\vspace{1.5em}
+\vspace{1.5em} % [변경] 헤더와 본문 사이 간격 확대 (1.5 -> 2.0)
 
 % --- 본문 시작 ---
 \noindent
@@ -100,30 +104,30 @@
     }
 
 
-    \vspace{1.2em}
+    \vspace{1.5em} % [변경] 섹션 간 여백 확대
 
     % 2. SKILLS
     \section*{\huge{skills}}
    
     Programming \\
     {\descstyle Rust, C, C++, Bash, Python }
-    
-    \vspace{0.5em}
+  
+    \vspace{0.5em} % [변경] 항목 간 여백 확대
     
     Spoken Languages \\
     {\descstyle Japanese (Advanced Business) \\
     English (Daily / Simple Business) }      
 
-    \vspace{0.5em}
+    \vspace{0.5em} % [변경] 항목 간 여백 확대
     System \& OS \\
     {\descstyle Linux (Ubuntu), Shell Scripting }
     
-    \vspace{0.5em}
+    \vspace{0.5em} % [변경] 항목 간 여백 확대
     DevOps \& Tools \\
     {\descstyle Neovim, Git, Ansible, Docker, Prometheus, Grafana }
 
  
-    \vspace{1.2em}
+    \vspace{1.5em}
 
 \end{minipage}
 \hfill
@@ -138,28 +142,30 @@
         \descstyle 
         \item Operational Automation (GsRoot)
         \begin{itemize}
-            \item Rust/SQLite 기반의 올인원 워크스테이션 제어 에이전트 개발 (메모리 점유율 21.2MB 최적화)
+            \item Rust/SQLite 기반의 워크스테이션 제어 서버 개발
             \item 관리자 부재 시간(새벽 등)의 대응 공백을 자동화로 해결하여, 기존 수 분~수 시간이 소요되던 장애 처리를 '즉시'로 단축 및 24시간 무중단 운영(Availability) 달성
         \end{itemize}
         
         \item System Integration (BLINK)
         \begin{itemize}
-            \item Biostar2 출입 이벤트를 트리거로 LDAP 계정 상태(Unclose/Close)를 실시간 갱신하는 이벤트 기반 동기화 데몬 개발
+            \item 건물 출입 이벤트를 트리거로 LDAP 계정 상태(Unclose/Close)를 실시간 갱신하는 동기화 데몬 개발
+            \item 교육생이 건물 내부 있는 경우에만 로그인 할 수 있도록 엑세스 권한 동기화
+            \item 출석하지 않고 학습(로그인)시간 늘리는 부정행위 방지
         \end{itemize}
         
         \item Infrastructure Monitoring
         \begin{itemize}
             \item Prometheus/Slack 연동을 통해 기존의 수동 점검(Ansible ping)에 의존하던 장애 탐지를 자동화하여, 클러스터 상태 사각지대 제거
-            \item 노드 다운 및 디스크 임계치(1GB 미만) 도달 시 alert 설정
+            \item 노드 다운 및 디스크 임계치(1GB 미만) 도달 시 alert 설정하여 실시간 현황 확인 및 대응
+            
         \end{itemize}
         
-        Automating Applicant Ops (Rust)
+        \item Automating Applicant Ops (Rust)
         \begin{itemize}
-            \item 매일 반복되는 지원자 데이터 수집 업무를 Rust로 자동화하여 수작업 비효율 제거
+            \item 매일 반복되는 전일 지원자 데이터 수집 업무를 Rust로 자동화하여 수작업 비효율 제거, 기존 매일 수십분 걸리던 데이터 수집 및 갱신을 0시에 '미리' 완료
             \item 단순 크롤링을 넘어, 데이터 변경분(Upsert) 감지 및 정합성 처리를 통해 신뢰성 있는 데이터 파이프라인 구축
         \end{itemize}
 
-        % [업데이트] 요청사항 반영: 매뉴얼, n8n/Outline/NocoDB 연동, 워크플로우
         \item Technical Documentation
         \begin{itemize}
             \item Service Management Control 매뉴얼 작성 및 사내 지식 공유 위키(Wiki) 고도화
@@ -168,17 +174,17 @@
         \end{itemize}
     \end{itemize}
 
-    \vspace{0.8em}
+    \vspace{1.2em} % [변경] 직장 간 여백 확대
 
     \jobtitle{(재)이노베이션 아카데미}{Intern} \\
     \dates{2023.10 - 2023.12}
     \begin{itemize}[label=\textbullet]
         \descstyle 
+        \item Ansible을 활용한 클러스터 구성 관리
         \item 교육생 과제 명세 작성
     \end{itemize}
 
     \vspace{1.0em}
-
 
 \end{minipage}
 

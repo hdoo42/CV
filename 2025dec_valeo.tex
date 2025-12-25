@@ -26,10 +26,10 @@
 \newfontfamily\lightfont{Roboto Light}
 
 % [핵심] 설명글용 스타일 매크로 정의 (8pt 크기, 얇은 폰트, 줄간격 10pt)
-\newcommand{\descstyle}{\lightfont\fontsize{8pt}{10pt}\selectfont}
+\newcommand{\descstyle}{\lightfont\fontsize{9.5pt}{10pt}\selectfont}
 
 % 리스트 설정 (전역)
-\setlist{nolistsep, leftmargin=1em} 
+\setlist{leftmargin=1em, itemsep=0.3em} 
 
 % 색상 정의
 \definecolor{bonusSteelBlue}{RGB}{70, 130, 180}
@@ -61,7 +61,7 @@
 \noindent
 \begin{minipage}[t]{0.61 \textwidth} 
     {\huge\bfseries 두혁진} \\[0.5em]
-    {\Large\textcolor{bonusSteelBlue}{System Software Engineer}} 
+    {\Large\textcolor{bonusSteelBlue}{system software engineer}} 
     \vspace{0.8em}
     
     {\descstyle 
@@ -95,43 +95,42 @@
     {\descstyle
     \begin{itemize}[label=\textbullet]
         \item C std lib, bash, IRC server 등을 직접 재구현하며 CS 기초 체화
-        \item 엄격한 코드 규칙(Norminette) 준수 및 메모리 수동 관리를 통해 결함 없는 코드 작성 훈련
+        \item 엄격한 코드 규칙 준수 및 메모리 수동 관리를 통해 결함 없는 코드 작성 훈련
         \item 6대 coalition master(학생회장) 역임, 커뮤니티에의 공로 인정받아 IITP원장상 수상
     \end{itemize}
     }
 
 
-    \vspace{1.2em}
+    \vspace{1.5em}
 
     % 2. SKILLS
     \section*{\huge{skills}}
     Programming \\
     {\descstyle Rust, C, C++, Bash, Python }
     
-    \vspace{0.5em}
+    \vspace{0.8em}
     
     Spoken Languages \\
     {\descstyle Japanese (Advanced Business) \\
     English (Daily / Simple Business) }     
 
-    \vspace{0.5em}
+    \vspace{0.8em}
     System \& OS \\
     {\descstyle Linux (Ubuntu), Shell Scripting }
     
-    \vspace{0.5em}
+    \vspace{0.8em}
     DevOps \& Tools \\
     {\descstyle Neovim, Git, Ansible, Docker, Prometheus, Grafana }
 
-    \vspace{1.2em}
+    \vspace{1.5em}
 
     % 3. ASK ME ABOUT
     \section*{\huge{ask me about}}
     Linux Kernel Troubleshooting
     \begin{itemize}[label=\textbullet]
         \descstyle 
-        % [수정] 하드웨어-OS 인터페이스 문제 해결 능력 강조
         \item Issue: Ubuntu 22.04 커널 업데이트 후 하드웨어(밝기 조절) 제어 불가 현상 트러블슈팅
-        \item Fix: GRUB 커널 파라미터 및 비디오 드라이버 로드 옵션 수정을 통해 호환성 문제 해결
+        \item Fix: GRUB 커널 파라미터 옵션 수정을 통해 문제 해결
     \end{itemize}
 
 \end{minipage}
@@ -145,40 +144,37 @@
     \dates{2024.02 - 현재}
     \begin{itemize}[label=\textbullet] 
         \descstyle 
-        % [수정] '슬랙봇' -> '자동화 시스템', '제어' 강조
         \item Operational Automation (GsRoot)
         \begin{itemize}
-            \item Rust/SQLite 기반 워크스테이션 제어(세션 종료, 리셋) 자동화 시스템 및 API 서버 개발
-            \item 관리자 수동 개입 최소화 및 24시간 무중단 운영 환경(Availability) 확보
+            \item Rust/SQLite 기반의 워크스테이션 제어 에이전트 개발 (메모리 점유율 21.2MB 최적화)
+            \item 관리자 부재 시간(새벽 등)의 대응 공백을 자동화로 해결하여, 기존 수 분~수 시간이 소요되던 장애 처리를 '즉시'로 단축 및 24시간 무중단 운영(Availability) 달성
         \end{itemize}
         
-        % [수정] '미들웨어', '정합성' 강조 -> 차량 내 시스템 통합 역량 어필
         \item System Integration (BLINK)
         \begin{itemize}
-            \item 물리 보안 시스템(Biostar2)과 LDAP 인증 서버 간 데이터 동기화 미들웨어 개발
+            \item Biostar2 출입 이벤트를 트리거로 LDAP 계정 상태(Unclose/Close)를 실시간 갱신하는 이벤트 기반 동기화 데몬 개발
         \end{itemize}
         
         \item Infrastructure Monitoring
         \begin{itemize}
-            \item Prometheus, Grafana, Loki 도입으로 서버 및 클러스터 관제 시스템 구축
-            \item 리소스 시각화로 장애 감지 시간 단축 및 선제적 대응 체계 마련
+            \item Prometheus/Slack 연동을 통해 기존의 수동 점검(Ansible ping)에 의존하던 장애 탐지를 자동화하여, 클러스터 상태 사각지대 제거
+            \item 노드 다운 및 디스크 임계치(1GB 미만) 도달 시 alert 설정
         \end{itemize}
         
-        % [수정] 위키 구축 -> 기술 자산화
-        \item Technical Documentation (codevalley.kr)
+        \item Technical Documentation
         \begin{itemize}
             \item 사내 기술 지식 공유 및 자산화를 위한 위키(Wiki) 시스템 구축 및 문서화 주도
         \end{itemize}
     \end{itemize}
 
-    \vspace{0.8em}
+    \vspace{1.2em}
 
     \jobtitle{(재)이노베이션 아카데미}{Intern} \\
     \dates{2023.10 - 2023.12}
     \begin{itemize}[label=\textbullet]
         \descstyle 
-        \item Ansible을 활용한 대규모 클러스터 프로비저닝 및 구성 관리(Configuration Management) 자동화
-        \item 교육생 과제 명세 작성 및 시스템 가이드라인 배포
+        \item Ansible을 활용한 클러스터 구성 관리
+        \item 교육생 과제 명세 작성
     \end{itemize}
 
     \vspace{1.0em}
